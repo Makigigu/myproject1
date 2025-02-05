@@ -34,6 +34,12 @@
                       <p>product</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="manage_order.php" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p></p>
+                    </a>
+                  </li>
                 </ul>
               </li>
 

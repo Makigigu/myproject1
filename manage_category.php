@@ -10,7 +10,7 @@ if(isset($_GET['did'])){
     $query->bindParam(':did',$did,PDO::PARAM_STR);
     $query->execute();
     echo "<script>alert('Deleted user successfully')</script>";
-    echo "<script>window.location.href='manage_user.php'</script>";
+    echo "<script>window.location.href='manage_category.php'</script>";
 }
 
 ?>
@@ -147,11 +147,8 @@ if(isset($_GET['did'])){
                       <thead>
                         <tr>
                           <th scope="col" style="width: 10px">ลำดับ</th>
-                          <th scope="col">ชื่อ</th>
-                          <th scope="col">ชื่อผู้ใช้งาน</th>
-                          <th scope="col">อีเมล</th>
-                          <th scope="col">เบอร์โทร</th>
-                          <th scope="col">ที่อยู่</th>
+                          <th scope="col">รหัสหมวดหมู่</th>
+                          <th scope="col">ชื่อหมวดหมู่</th>
                           <th scope="col" style="width: 40px">Label</th>
                         </tr>
                       </thead>
@@ -168,15 +165,12 @@ if(isset($_GET['did'])){
                                 foreach($results as $row) { ?>
                                     <tr class="align-middle">
                                     <td><?php echo $cnc;?></td>
-                                    <td><?php echo $row->fullname;?></td>
-                                    <td><?php echo $row->username;?></td>
-                                    <td><?php echo $row->useremail;?></td>
-                                    <td><?php echo $row->usermobile;?></td>
-                                    <td><?php echo $row->address;?></td>
+                                    <td><?php echo $row->cat_id;?></td>
+                                    <td><?php echo $row->cat_name;?></td>
                                     
                                     <td>
-                                      <a href="edit-users.php?id=<?php echo $row->id;?>" class="btn btn-warning">แก้ไข</a>
-                                      <a href="manage_user.php?did=<?php echo $row->id;?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบผู้ใช้งานใช่ไหม?');">ลบ</a>
+                                      <a href="edit-category.php?id=<?php echo $row->id;?>" class="btn btn-warning">แก้ไข</a>
+                                      <a href="manage_category.php?did=<?php echo $row->id;?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบหมวดหมู่ใช่ไหม?');">ลบ</a>
                                     </td>
 
                                     </tr>

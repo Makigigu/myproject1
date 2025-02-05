@@ -10,7 +10,7 @@ if(isset($_GET['did'])){
     $query->bindParam(':did',$did,PDO::PARAM_STR);
     $query->execute();
     echo "<script>alert('Deleted user successfully')</script>";
-    echo "<script>window.location.href='manage_user.php'</script>";
+    echo "<script>window.location.href='manage_product.php'</script>";
 }
 
 ?>
@@ -177,8 +177,8 @@ if(isset($_GET['did'])){
                                     <td><?php echo $row->pro_img;?></td>
                                     
                                     <td>
-                                      <a href="edit-users.php?id=<?php echo $row->id;?>" class="btn btn-warning">แก้ไข</a>
-                                      <a href="manage_user.php?did=<?php echo $row->id;?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบผู้ใช้งานใช่ไหม?');">ลบ</a>
+                                      <a href="edit-product.php?id=<?php echo $row->id;?>" class="btn btn-warning">แก้ไข</a>
+                                      <a href="manage_product.php?did=<?php echo $row->id;?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบผลิตภัณฑ์ใช่ไหม?');">ลบ</a>
                                     </td>
 
                                     </tr>
